@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render plain: "List of users:\n" + Users.order(:id).map { |user| user.to_displayable_string }.join("\n")
+    render plain: "List of users:\n" + Users.all.map { |user| user.to_displayable_string }.join("\n")
   end
 
   def create
@@ -23,11 +23,7 @@ class UsersController < ApplicationController
     password = params[:password]
     user = Users.find_by(email: email)
     if user
-      if password == user.password
-        response_text = true
-      else
-        response_text = false
-      end
+      response_text = password == user.password ? true : false
     else
       response_text = "Error: No user with given email exists."
     end
