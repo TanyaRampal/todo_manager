@@ -5,12 +5,6 @@ class UsersController < ApplicationController
     render plain: "List of users:\n" + Users.order(:id).map { |user| user.to_displayable_string }.join("\n")
   end
 
-  # def show
-  #   id = params[:id]
-  #   todo = Todo.find(id)
-  #   render plain: todo.to_pleasant_string
-  # end
-
   def create
     name = params[:name]
     email = params[:email]
@@ -24,12 +18,19 @@ class UsersController < ApplicationController
     render plain: response_text
   end
 
-  # def update
-  #   id = params[:id]
-  #   completed = params[:completed]
-  #   todo = Todo.find(id)
-  #   todo.completed = completed
-  #   todo.save
-  #   render plain: "Updated todo status to #{completed} "
-  # end
+  def login
+    email = params[:email]
+    password = params[:password]
+    user = Users.find_by(email: email)
+    if user
+      if password == user.password
+        response_text = true
+      else
+        response_text = false
+      end
+    else
+      response_text = "Error: No user with given email exists."
+    end
+    render plain: response_text
+  end
 end

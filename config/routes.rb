@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # get "todos/:id", to: "todos#show"          #shows 1 todo based on para id
 
   resources :todos
+
   resources :users
+  post "users/login", to: "users#login"
 end
