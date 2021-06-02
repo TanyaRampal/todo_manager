@@ -22,11 +22,11 @@ class UsersController < ApplicationController
     email = params[:email]
     password = params[:password]
     user = Users.find_by(email: email)
-    if user
-      response_text = password == user.password ? true : false
-    else
-      response_text = "Error: No user with given email exists."
-    end
+    response_text = if user
+        password == user.password ? true : false
+      else
+        "Error: No user with given email exists."
+      end
     render plain: response_text
   end
 end
