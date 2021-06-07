@@ -8,6 +8,16 @@ body {
   margin-top: 32px;
 }
 
+.TodoPageMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SplashImage {
+  max-width: 300px;
+}
+
 /* for text */
 .TodoPage-title {
   font-size: 48px;
@@ -32,5 +42,10 @@ body {
 /* for layout b/w two days*/
 .TodoSection {
   margin-bottom: 32px;
+  margin-left: 32px;
+  padding: 32px;
+}
+
+article {
   margin-left: 32px;
 }
