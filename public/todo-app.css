@@ -1,0 +1,47 @@
+/* Typography scale */
+/* 48 34 24 20 16 (px) */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 32px;
+  color: #453c52;
+}
+
+/* for text */
+/* add todo text */
+.AddTodo {
+  display: flex;
+  height: 32px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+/* todo texts */
+.TodoPage-title {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.TodoSection-title {
+  font-size: 14px;
+}
+
+.TodoSection-todo {
+  margin: 12px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+/* ******* */
+
+/* for layout b/w two days*/
+.TodoSection {
+  margin-bottom: 20px;
+}
+
+article {
+  margin-left: 32px;
+}
