@@ -124,6 +124,10 @@ ul {
   border-color: #bfb8cc;
 }
 
+.TodoItem-checkbox:hover {
+  cursor: pointer;
+}
+
 .TodoItem-overdueLabel {
   margin-left: 10px;
   color: #c53030;
