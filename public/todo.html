@@ -15,27 +15,103 @@
 
       <section class="AddTodo">
         <input type="text" class="AddTodo-text" placeholder="What's next?" />
-        <input type="date" class="AddTodo-date" />
+        <input type="date" class="AddTodo-date" placeholder=" " />
         <input type="button" class="AddTodo-button" value="Add" />
       </section>
 
+      <!-- Section for Due Today -->
       <section class="TodoSection">
-        <h2 class="TodoSection-title">Due Today</h2>
-        <p class="TodoSection-todo">type something</p>
-        <p class="TodoSection-todo">type something</p>
-      </section>
+        <div class="TodoSectionTitle">
+          <p class="TodoSectionTitle-text">Due Today</p>
+          <p class="TodoSectionTitle-remainingCount">0/2</p>
+        </div>
+        <ul>
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input type="checkbox" class="TodoItem-checkbox" />
+              Type something
+              <p class="TodoItem-overdueLabel">Overdue</p>
+              <a href="javascript:void(0)" class="TodoItem-delete">
+                <img src="delete.svg" />
+              </a>
+            </label>
+          </li>
 
-      <section class="TodoSection">
-        <h2 class="TodoSection-title">Due Tomorrow</h2>
-        <p class="TodoSection-todo">type something</p>
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input type="checkbox" class="TodoItem-checkbox" />
+              Type something
+              <a href="javascript:void(0)" class="TodoItem-delete">
+                <img src="delete.svg" />
+              </a>
+            </label>
+          </li>
+        </ul>
       </section>
+      <!-- End of Due today -->
 
+      <!-- Section for Due tomorrow -->
       <section class="TodoSection">
-        <h2 class="TodoSection-title">Remaining</h2>
-        <p class="TodoSection-todo">type something</p>
-        <p class="TodoSection-todo">type something</p>
-        <p class="TodoSection-todo">type something</p>
+        <div class="TodoSectionTitle">
+          <p class="TodoSectionTitle-text">Due Tomorrow</p>
+          <p class="TodoSectionTitle-remainingCount">0/1</p>
+        </div>
+        <ul>
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input type="checkbox" class="TodoItem-checkbox" />
+              Type something
+              <a href="javascript:void(0)" class="TodoItem-delete">
+                <img src="delete.svg" />
+              </a>
+            </label>
+          </li>
+        </ul>
       </section>
+      <!-- End of Due tomorrow -->
+
+      <!-- Section for Remaining -->
+      <section class="TodoSection">
+        <div class="TodoSectionTitle">
+          <p class="TodoSectionTitle-text">Remaining</p>
+          <p class="TodoSectionTitle-remainingCount">0/3</p>
+        </div>
+        <ul>
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input type="checkbox" class="TodoItem-checkbox" />
+              Type something
+              <p class="TodoItem-dueDateLabel">Jan 21</p>
+              <a href="javascript:void(0)" class="TodoItem-delete">
+                <img src="delete.svg" />
+              </a>
+            </label>
+          </li>
+
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input type="checkbox" class="TodoItem-checkbox" />
+              Type something
+              <p class="TodoItem-dueDateLabel">Jan 22</p>
+              <a href="javascript:void(0)" class="TodoItem-delete">
+                <img src="delete.svg" />
+              </a>
+            </label>
+          </li>
+
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input type="checkbox" class="TodoItem-checkbox" />
+              Type something
+              <p class="TodoItem-dueDateLabel">Jan 23</p>
+              <a href="javascript:void(0)" class="TodoItem-delete">
+                <img src="delete.svg" />
+              </a>
+            </label>
+          </li>
+        </ul>
+      </section>
+      <!-- End of Remaining -->
     </article>
   </body>
 </html>
