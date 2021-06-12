@@ -1,12 +1,31 @@
-<h1>this is the todos list</h1>
+<article>
+  <h1 class="TodoPage-title">My To-do List</h1>
 
-<p> the current date and time is : <%= DateTime.now.to_s(:long) %> </p>
+  <section class="AddTodo">
+    <input type="text" class="AddTodo-text" placeholder="What's next?" />
+    <input type="date" class="AddTodo-date" placeholder=" " />
+    <input type="button" class="AddTodo-button" value="Add" />
+  </section>
 
-<h3>the are a total of <%= Todo.count %> todos in the database </h3>
+  <!-- Section for Due Today -->
+  <%= render partial: "todo-section", locals: {
+               section_title: "Overdue",
+               todos: Todo.overdue,
+             } %>
 
-<% Todo.all.each do |todo| %>
-<div style="display: flex; align-items:center;">
-  <p style="color: darkblue; font-size:32px; margin-right:32px;"> <%= todo.todo_text %> </p>
-  <p> <%= todo.due_date %> </p>
-</div>
-<% end %>
+  <!-- End of Due today -->
+
+  <!-- Section for Due today -->
+  <%= render partial: "todo-section", locals: {
+               section_title: "Due Today",
+               todos: Todo.due_today,
+             } %>
+  <!-- End of Due today -->
+
+  <!-- Section for Remaining -->
+  <%= render partial: "todo-section", locals: {
+               section_title: "Remaining",
+               todos: Todo.due_later,
+             } %>
+  <!-- End of Remaining -->
+</article>
