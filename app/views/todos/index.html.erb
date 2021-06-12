@@ -11,7 +11,7 @@
   <%= render partial: "todo-section", locals: {
                section_title: "Overdue",
                todos: Todo.overdue,
-               show_due_date: true
+               show_due_date: true,
              } %>
   <!-- End of Overdue -->
 
@@ -19,15 +19,15 @@
   <%= render partial: "todo-section", locals: {
                section_title: "Due Today",
                todos: Todo.due_today,
-               show_due_date: false
+               show_due_date: false,
              } %>
   <!-- End of Due today -->
 
-  <!-- Section for Remaining -->
+  <!-- Section for Due Later -->
   <%= render partial: "todo-section", locals: {
-               section_title: "Remaining",
+               section_title: "Due Later",
                todos: Todo.due_later,
-               show_due_date: true
+               show_due_date: true,
              } %>
-  <!-- End of Remaining -->
+  <!-- End of Due Later -->
 </article>
