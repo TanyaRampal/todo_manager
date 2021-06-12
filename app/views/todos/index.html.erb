@@ -7,18 +7,19 @@
     <input type="button" class="AddTodo-button" value="Add" />
   </section>
 
-  <!-- Section for Due Today -->
+  <!-- Section for Overdue -->
   <%= render partial: "todo-section", locals: {
                section_title: "Overdue",
                todos: Todo.overdue,
+               show_due_date: true
              } %>
-
-  <!-- End of Due today -->
+  <!-- End of Overdue -->
 
   <!-- Section for Due today -->
   <%= render partial: "todo-section", locals: {
                section_title: "Due Today",
                todos: Todo.due_today,
+               show_due_date: false
              } %>
   <!-- End of Due today -->
 
@@ -26,6 +27,7 @@
   <%= render partial: "todo-section", locals: {
                section_title: "Remaining",
                todos: Todo.due_later,
+               show_due_date: true
              } %>
   <!-- End of Remaining -->
 </article>
