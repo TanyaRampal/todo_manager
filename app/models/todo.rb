@@ -19,6 +19,10 @@ class Todo < ActiveRecord::Base
     where(completed: true)
   end
 
+  def self.not_completed
+    where(completed: false)
+  end
+
   def self.show_list
     puts "My Todo-list\n\n"
 
@@ -33,12 +37,5 @@ class Todo < ActiveRecord::Base
     puts "Due Later\n"
     puts due_later.map { |todo| todo.to_displayable_string }
     puts "\n\n"
-  end
-
-  def self.mark_as_complete(id)
-    todo = self.find(id)
-    todo.completed = true
-    todo.save
-    todo
   end
 end
