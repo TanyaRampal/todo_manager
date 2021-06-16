@@ -10,11 +10,11 @@
         <label class="TodoItem-container">
 
           <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
-            <input type="checkbox"
-                  class="TodoItem-checkbox"
-                  <%= todo.completed ? "checked" : "" %>
-                  name="completed"
-                  onclick="this.form.submit()" />
+            <%= check_box_tag "completed",
+                              nil,
+                              todo.completed ? true : false,
+                              class: "TodoItem-checkbox",
+                              onclick: "this.form.submit()" %>
           <% end %>
 
           <p style="text-decoration: <%= todo.completed ? "line-through;" : "" %>"> <%= todo.todo_text %> </p>
@@ -25,7 +25,7 @@
 
           <a href="javascript:void(0)" class="TodoItem-delete">
             <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
-              <input type="image" src="delete.svg" />
+              <%= image_submit_tag("delete.svg", class: "icon", data: { confirm: "Are you sure you want to permanently delete the todo: '#{todo.todo_text}' from the list?" }) %>
             <% end %>
           </a>
         </label>

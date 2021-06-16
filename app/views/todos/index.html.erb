@@ -2,9 +2,9 @@
   <h1 class="TodoPage-title">My To-do List</h1>
 
   <%= form_with(url: "/todos", method: "post", class: "AddTodo") do %>
-    <input type="text" name="todo_text" class="AddTodo-text" placeholder="What's next?" required/>
-    <input type="date" name="due_date" class="AddTodo-date" required/>
-    <input type="submit" class="AddTodo-button" value="Add" />
+    <%= text_field_tag "todo_text", nil, placeholder: "What's next?", class: "AddTodo-text", required: true %>
+    <%= date_field_tag "due_date", nil, class: "AddTodo-date", required: true %>
+    <%= submit_tag "Add", class: "AddTodo-button" %>
   <% end %>
 
   <!-- Section for Overdue -->

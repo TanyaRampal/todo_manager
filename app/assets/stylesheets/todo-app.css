@@ -139,8 +139,8 @@ ul {
   visibility: hidden;
 }
 
-.TodoItem-delete > img {
-  width: 16px;
+.icon {
+  width: 20px;
   /* fill: #453C52; */
   filter: invert(19%) sepia(24%) saturate(587%) hue-rotate(222deg)
     brightness(103%) contrast(87%);
