@@ -1,0 +1,39 @@
+.NewUsers-title {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.Form-section {
+  margin-bottom: 20px;
+}
+
+.Form-input {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.Form-input-label {
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.Form-submit {
+  padding: 6px 22px;
+  font-size: 17px;
+  color: white;
+  background-color: #48bb78;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.Form-submit:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px grey;
+  background-color: #46a36d;
+}
+
+.Form-submit:active {
+  background-color: #3e8e41;
+  box-shadow: 2px 2px 5px grey;
+  transform: translateY(2px);
+}

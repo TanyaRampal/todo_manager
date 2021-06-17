@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   # post "todos", to: "todos#create"           #adds a todo to the list
   # get "todos/:id", to: "todos#show"          #shows 1 todo based on para id
 
+  # root :to => "/"
+
+  get "/" => "home#index"
+
   resources :todos
 
   resources :users
