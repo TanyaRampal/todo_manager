@@ -6,13 +6,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    name = params[:name]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
     email = params[:email]
-    password = params[:password]
+    password = params[:password_digest]
     new_user = Users.create!(
-      name: name,
+      first_name: first_name,
+      last_name: last_name,
       email: email,
-      password: password,
+      password_digest: password,
     )
     response_text = "New user created is: #{new_user.to_displayable_string}"
     render plain: response_text
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
 
   def login
     email = params[:email]
-    password = params[:password]
+    password = params[:password_digest]
     user = Users.find_by(email: email)
     response_text = if user
         password == user.password ? true : false
