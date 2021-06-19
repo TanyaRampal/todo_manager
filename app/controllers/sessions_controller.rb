@@ -12,10 +12,12 @@ class SessionsController < ApplicationController
         session[:current_user_id] = user.id
         redirect_to "/"
       else
-        render plain: "Incorrect password"
+        flash[:error] = "Password of '#{user.email}' is incorrect. Please retry."
+        redirect_to new_sessions_path
       end
     else
-      render plain: "no registered user with given email "
+      flash[:error] = "No such user-email '#{params[:email]}' exists. Please retry."
+      redirect_to new_sessions_path
     end
   end
 
