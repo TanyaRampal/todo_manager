@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :ensure_user_logged_in
+
   def new
   end
 
@@ -7,7 +9,8 @@ class SessionsController < ApplicationController
 
     if user
       if user.authenticate(params[:password])
-        render plain: "you have successfully signed in"
+        session[:current_user_id] = user.id
+        redirect_to "/"
       else
         render plain: "Incorrect password"
       end
