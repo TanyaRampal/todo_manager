@@ -1,4 +1,9 @@
 .NewUsers {
+  display: grid;
+  justify-content: center;
+}
+
+.NewUsers-form {
   display: flex;
   justify-content: center;
 }

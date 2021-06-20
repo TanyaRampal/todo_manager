@@ -2,27 +2,28 @@
 <hr>
 
 <section class="NewUsers">
-  <%= form_with url: users_path do |form| %>
-    <div class="Form-section">
-      <p class="Form-input-label">First Name:</p>
-        <%= form.text_field :first_name, class: "Form-input", required: true %>
-    </div>
-    <div class="Form-section">
-      <p class="Form-input-label">Last Name:</p>
-      <%= form.text_field :last_name, class: "Form-input" %>
-    </div>
-    <div class="Form-section">
-      <p class="Form-input-label">Email:</p>
-      <%= form.email_field :email, class: "Form-input", required: true %>
-    </div>
-    <div class="Form-section">
-      <p class="Form-input-label">Password:</p>
-      <%= form.password_field :password, class: "Form-input", required: true %>
-    </div>
+  <div class="NewUsers-form">
+    <%= form_with url: users_path do |form| %>
+      <div class="Form-section">
+        <p class="Form-input-label">First Name:</p>
+          <%= form.text_field :first_name, class: "Form-input", required: true %>
+      </div>
+      <div class="Form-section">
+        <p class="Form-input-label">Last Name:</p>
+        <%= form.text_field :last_name, class: "Form-input" %>
+      </div>
+      <div class="Form-section">
+        <p class="Form-input-label">Email:</p>
+        <%= form.email_field :email, class: "Form-input", required: true %>
+      </div>
+      <div class="Form-section">
+        <p class="Form-input-label">Password:</p>
+        <%= form.password_field :password, class: "Form-input", required: true %>
+      </div>
 
-    <div class="Form-section">
-      <%= form.submit "Sign-up!", class: "Form-submit" %>
-    </div>
-  <% end %>
-
+      <div class="Form-section">
+        <%= form.submit "Sign-up!", class: "Form-submit" %>
+      </div>
+    <% end %>
+  </div>
 </section>

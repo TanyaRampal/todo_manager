@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
         redirect_to new_sessions_path
       end
     else
-      flash[:error] = "No such user-email '#{params[:email]}' exists. Please retry."
+      flash[:error] = "No account with user-email '#{params[:email]}' exists. Please retry."
       redirect_to new_sessions_path
     end
   end

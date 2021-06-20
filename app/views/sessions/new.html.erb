@@ -2,19 +2,27 @@
 <hr>
 
 <section class="NewUsers">
-  <%= form_with url: sessions_path do |form| %>
-    <div class="Form-section">
-      <p class="Form-input-label">Email:</p>
-      <%= form.email_field :email, class: "Form-input", required: true %>
-    </div>
-    <div class="Form-section">
-      <p class="Form-input-label">Password:</p>
-      <%= form.password_field :password, class: "Form-input", required: true %>
-    </div>
-
-    <div class="Form-section">
-      <%= form.submit "Sign-in!", class: "Form-submit" %>
-    </div>
+  <% if flash[:error] %>
+    <p class="Flash-error">
+      <%= flash[:error] %>
+    </p>
   <% end %>
+
+  <div class="NewUsers-form">
+    <%= form_with url: sessions_path do |form| %>
+      <div class="Form-section">
+        <p class="Form-input-label">Email:</p>
+        <%= form.email_field :email, class: "Form-input", required: true %>
+      </div>
+      <div class="Form-section">
+        <p class="Form-input-label">Password:</p>
+        <%= form.password_field :password, class: "Form-input", required: true %>
+      </div>
+
+      <div class="Form-section">
+        <%= form.submit "Sign-in!", class: "Form-submit" %>
+      </div>
+    <% end %>
+  </div>
 
 </section>
