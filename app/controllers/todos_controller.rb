@@ -5,13 +5,6 @@ class TodosController < ApplicationController
     render "index"
   end
 
-  def show
-    id = params[:id]
-    todo = Todo.of_user(current_user).find(id)
-    render "todo"
-    # render plain: todo.to_pleasant_string
-  end
-
   def create
     todo_text = params[:todo_text]
     due_date = DateTime.parse(params[:due_date])

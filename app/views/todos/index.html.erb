@@ -10,6 +10,12 @@
     <%= submit_tag "Add", class: "AddTodo-button" %>
   <% end %>
 
+  <!-- Section for Remaining todos -->
+  <%= render partial: "remaining-todos-section", locals: {
+               todos: @todos.overdue.completed,
+             } %>
+  <!-- End of Remaining todos -->
+
   <!-- Section for Overdue -->
   <%= render partial: "todo-section", locals: {
                section_title: "Overdue",

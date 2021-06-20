@@ -112,11 +112,21 @@ article {
 }
 
 .TodoSectionTitle-text {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   font-weight: 600;
   margin-right: 8px;
   color: #453c52;
+}
+
+.remaining-todos,
+.Hide-remaining-todos {
+  display: none;
+}
+
+ul.remaining-todos-list {
+  list-style: circle;
+  margin-left: 22px;
 }
 
 .TodoSectionTitle-remainingCount {

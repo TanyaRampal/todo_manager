@@ -1,10 +1,6 @@
 class Todo < ActiveRecord::Base
   belongs_to :user
 
-  def due_today?
-    due_date == Date.today
-  end
-
   def self.overdue
     where("due_date < ?", Date.today).order("due_date")
   end
@@ -23,21 +19,5 @@ class Todo < ActiveRecord::Base
 
   def self.not_completed
     where(completed: false)
-  end
-
-  def self.show_list
-    puts "My Todo-list\n\n"
-
-    puts "Overdue\n"
-    puts overdue.map { |todo| todo.to_displayable_string }
-    puts "\n\n"
-
-    puts "Due Today\n"
-    puts due_today.map { |todo| todo.to_displayable_string }
-    puts "\n\n"
-
-    puts "Due Later\n"
-    puts due_later.map { |todo| todo.to_displayable_string }
-    puts "\n\n"
   end
 end
