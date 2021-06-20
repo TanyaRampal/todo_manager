@@ -1,20 +1,24 @@
-.Home-title {
-  font-size: 20px;
-  margin-bottom: 30px;
+.Header-title {
+  font-size: 34px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: gray;
+}
+
+hr {
+  border-top: 1.5px solid gray;
+  margin-bottom: 35px;
 }
 
 .Home-authenticate {
-  margin-bottom: 20px;
+  margin-left: 20%;
   font-size: 16px;
+  list-style: disc;
 }
 
-.UserHeader {
-  padding: 10px;
-  background-color: lightgray;
-  font-size: 14px;
+.Home-authenticate > li {
   margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
+  font-size: 18px;
 }
 
 .Flash-error {
@@ -25,4 +29,16 @@
   padding: 5px;
   border-radius: 2px;
   display: table;
+}
+
+.Flash-welcome {
+  background-color: rgba(83, 216, 139, 0.5);
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: green;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
 }

@@ -1,6 +1,6 @@
-.NewUsers-title {
-  margin-bottom: 40px;
-  font-size: 30px;
+.NewUsers {
+  display: flex;
+  justify-content: center;
 }
 
 .Form-section {
@@ -10,6 +10,7 @@
 .Form-input-label {
   color: #555555;
   margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .Form-input {
@@ -21,7 +22,7 @@
 
 .Form-submit {
   padding: 6px 22px;
-  font-size: 17px;
+  font-size: 18px;
   color: white;
   background-color: #48bb78;
   border-radius: 4px;

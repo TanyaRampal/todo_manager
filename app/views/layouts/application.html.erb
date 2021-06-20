@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoManager</title>
+    <title>Todo Manager</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="title-image.png" type="image/x-icon" />
     <%= csrf_meta_tags %>
@@ -13,10 +13,11 @@
 
   <body>
     <% if @current_user %>
-      <p class="UserHeader">
-        Welcome <%= @current_user.first_name %>
-        <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
-      </p>
+      <% if flash[:welcome] %>
+        <p class="Flash-welcome">
+          <%= flash[:welcome] %>
+        </p>
+      <% end %>
     <% end %>
 
     <% if flash[:error] %>
