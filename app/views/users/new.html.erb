@@ -2,6 +2,12 @@
 <hr>
 
 <section class="NewUsers">
+  <% if flash[:error] %>
+    <p class="Flash-error">
+      <%= flash[:error] %>
+    </p>
+  <% end %>
+
   <div class="NewUsers-form">
     <%= form_with url: users_path do |form| %>
       <div class="Form-section">
