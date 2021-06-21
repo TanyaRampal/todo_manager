@@ -17,9 +17,13 @@ class TodosController < ApplicationController
     if new_todo.save
       redirect_to todos_path
     else
-      flash[:error] = new_todo.errors.full_messages.join(", ")
+      errors = new_todo.errors.full_messages
+      if errors.length > 2
+        errors.delete_at(1)
+      end
+      flash[:error] = errors.join(", ")
+      redirect_to todos_path
     end
-    redirect_to todos_path
   end
 
   def update

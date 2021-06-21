@@ -1,13 +1,11 @@
 class SessionsController < ApplicationController
   skip_before_action :ensure_user_logged_in
 
-  def new
-  end
-
   def create
     user = User.find_by(email: params[:email])
 
     if user
+      # give a welcome message (in /todos) if account is signed-in else give flash error
       if user.authenticate(params[:password])
         greeting = "Good " + if Time.now.hour < 12
           "Morning"
@@ -24,14 +22,19 @@ class SessionsController < ApplicationController
         redirect_to new_sessions_path
       end
     else
-      flash[:error] = "No account with user-email '#{params[:email]}' exists. Please retry."
+      if params[:email] == ""
+        flash[:error] = "Please enter your email-id"
+      else
+        flash[:error] = "No account with user-email '#{params[:email]}' exists. Please retry."
+      end
       redirect_to new_sessions_path
     end
   end
 
   def destroy
     session[:current_user_id] = nil
-    flash[:notice] = "You have successfully logged out."
+    # give sign-out success message in homepage(index)
+    flash[:notice] = "You have successfully signed out."
     @current_user = nil
     redirect_to "/"
   end

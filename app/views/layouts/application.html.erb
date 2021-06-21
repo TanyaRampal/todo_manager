@@ -3,7 +3,7 @@
   <head>
     <title>Todo Manager</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" href="title-image.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="<%= image_url("title-image.png") %>" type="image/x-icon" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,7 @@
   </head>
 
   <body>
+  <% # Welcome message when user signs in %>
     <% if @current_user %>
       <% if flash[:welcome] %>
         <p class="Flash-welcome">

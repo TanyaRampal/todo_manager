@@ -1,3 +1,4 @@
+/* Header for homepage, signin and signup pages */
 .Header-title {
   font-size: 34px;
   margin-bottom: 25px;
@@ -9,7 +10,9 @@ hr {
   border-top: 1.5px solid gray;
   margin-bottom: 35px;
 }
+/* **************** */
 
+/* Ordered list in homepage */
 .Home-authenticate {
   margin-left: 20%;
   font-size: 16px;
@@ -20,7 +23,9 @@ hr {
   margin-bottom: 10px;
   font-size: 18px;
 }
+/* **************** */
 
+/* Style for all flash messages */
 .Flash-error {
   color: darkred;
   margin-bottom: 20px;
@@ -29,6 +34,7 @@ hr {
   padding: 5px;
   border-radius: 2px;
   display: table;
+  text-align: center;
 }
 
 .Flash-log {
@@ -52,3 +58,4 @@ hr {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
+/* **************** */
