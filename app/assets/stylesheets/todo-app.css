@@ -190,4 +190,124 @@ ul {
 .TodoItem-container:hover .TodoItem-delete {
   visibility: visible;
 }
-/* ******* */
+/* ********************** */
+
+/* media queries for ipad */
+@media only screen and (max-width: 770px) and (min-width: 481px) and (min-height: 600px) and (max-height: 1024px) {
+  article {
+    margin-right: 32px;
+  }
+
+  body {
+    max-width: 680px;
+    margin: 0 auto;
+    margin-top: 30px;
+    align-items: center;
+  }
+
+  .Sign-out-button {
+    font-size: 26px;
+  }
+
+  .TodoPage-title {
+    font-size: 50px;
+  }
+
+  /* add todo input tags css */
+  .AddTodo {
+    margin-bottom: 36px;
+  }
+
+  .AddTodo-text,
+  .AddTodo-date {
+    font-size: 20px;
+    height: 30px;
+  }
+
+  .AddTodo-button {
+    width: 50%;
+    padding: 0px;
+    font-size: 20px;
+    height: 44px;
+  }
+  /* ************ */
+
+  /* todo texts (each section)*/
+  .TodoSection {
+    margin-bottom: 30px;
+  }
+
+  .TodoSectionTitle {
+    font-size: 24px;
+  }
+
+  .TodoSectionTitle-text {
+    font-size: 26px;
+  }
+
+  .TodoSectionTitle-remainingCount {
+    font-size: 16px;
+  }
+
+  .TodoItem {
+    font-size: 22px;
+    margin-left: 8px;
+    margin-bottom: 12px;
+  }
+
+  .TodoItem-checkbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .TodoItem-dueDate {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .TodoItem-delete {
+    visibility: visible;
+  }
+
+  .icon {
+    width: 30px;
+    /* fill: #644097; */
+    filter: invert(30%) sepia(18%) saturate(2559%) hue-rotate(226deg)
+      brightness(89%) contrast(90%);
+  }
+}
+/* **************** */
+
+/* media queries for mobile */
+@media only screen and (max-width: 480px) {
+  article {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  body {
+    max-width: unset;
+    margin: 0 auto;
+    margin-top: 30px;
+    align-items: center;
+  }
+
+  .TodoPage-title {
+    font-size: 20;
+  }
+
+  .Sign-out-button {
+    font-size: 14px;
+  }
+
+  .TodoItem-delete {
+    visibility: visible;
+  }
+
+  .icon {
+    /* fill: #644097; */
+    filter: invert(30%) sepia(18%) saturate(2559%) hue-rotate(226deg)
+      brightness(89%) contrast(90%);
+  }
+}
+/* **************** */
