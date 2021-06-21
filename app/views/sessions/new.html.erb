@@ -12,11 +12,11 @@
     <%= form_with url: sessions_path do |form| %>
       <div class="Form-section">
         <p class="Form-input-label">Email:</p>
-        <%= form.email_field :email, class: "Form-input", required: true %>
+        <%= form.email_field :email, class: "Form-input" %>
       </div>
       <div class="Form-section">
         <p class="Form-input-label">Password:</p>
-        <%= form.password_field :password, class: "Form-input", required: true %>
+        <%= form.password_field :password, class: "Form-input" %>
       </div>
 
       <div class="Form-section">

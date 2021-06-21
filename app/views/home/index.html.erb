@@ -2,6 +2,12 @@
 <hr>
 
 <ol class="Home-authenticate">
+  <% if flash[:notice] %>
+    <p class="Flash-log">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+
   <li>If you are a new user, <%= link_to "Sign-Up here", new_user_path %></li>
   <li>If you are an existing user, <%= link_to "Sign-In here", new_sessions_path %></li>
 </ol>

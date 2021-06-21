@@ -5,9 +5,15 @@
   </div>
 
   <%= form_with(url: "/todos", method: "post", class: "AddTodo") do %>
-    <%= text_field_tag "todo_text", nil, placeholder: "What's next?", class: "AddTodo-text", required: true %>
-    <%= date_field_tag "due_date", nil, class: "AddTodo-date", required: true %>
+    <%= text_field_tag "todo_text", nil, placeholder: "What's next?", class: "AddTodo-text" %>
+    <%= date_field_tag "due_date", nil, class: "AddTodo-date" %>
     <%= submit_tag "Add", class: "AddTodo-button" %>
+  <% end %>
+
+  <% if flash[:error] %>
+    <p class="Flash-error">
+      <%= flash[:error] %>
+    </p>
   <% end %>
 
   <!-- Section for Remaining todos -->
