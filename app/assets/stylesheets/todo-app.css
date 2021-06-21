@@ -119,6 +119,7 @@ article {
   color: #453c52;
 }
 
+/* overdue and completed todos - hidden until link clicked */
 .remaining-todos,
 .Hide-remaining-todos {
   display: none;
@@ -128,6 +129,7 @@ ul.remaining-todos-list {
   list-style: circle;
   margin-left: 22px;
 }
+/* *** */
 
 .TodoSectionTitle-remainingCount {
   font-size: 12px;
@@ -189,5 +191,3 @@ ul {
   visibility: visible;
 }
 /* ******* */
-
-/* for layout b/w two days*/

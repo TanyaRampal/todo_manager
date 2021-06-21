@@ -16,7 +16,7 @@
     </p>
   <% end %>
 
-  <!-- Section for Remaining todos -->
+  <!-- Section for Remaining todos (visible only if link clicked) -->
   <%= render partial: "remaining-todos-section", locals: {
                todos: @todos.overdue.completed,
              } %>
