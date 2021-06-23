@@ -5,7 +5,7 @@
   </div>
 
   <%= form_with(url: "/todos", method: "post", class: "AddTodo") do %>
-    <%= text_field_tag "todo_text", nil, placeholder: "What's next?", class: "AddTodo-text" %>
+    <%= text_field_tag "todo_text", nil, placeholder: "What's next?", class: "AddTodo-text", autofocus: true %>
     <%= date_field_tag "due_date", nil, class: "AddTodo-date" %>
     <%= submit_tag "Add", class: "AddTodo-button" %>
   <% end %>
@@ -13,6 +13,12 @@
   <% if flash[:error] %>
     <p class="Flash-error Flash-error-todo">
       <%= flash[:error] %>
+    </p>
+  <% end %>
+
+  <% if flash[:notice] %>
+    <p class="Flash-log">
+      <%= flash[:notice] %>
     </p>
   <% end %>
 

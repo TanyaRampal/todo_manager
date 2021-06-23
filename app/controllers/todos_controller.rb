@@ -5,23 +5,24 @@ class TodosController < ApplicationController
   end
 
   def create
-    todo_text = params[:todo_text]
+    todo_text = params[:todo_text].strip.downcase.capitalize
     due_date = params[:due_date]
 
-    todo = Todo.find_by(todo_text: todo_text, user_id: current_user.id)
+    todo = Todo.find_by(todo_text: todo_text, due_date: due_date, user_id: current_user.id)
+
     # check if todo already exists within same user
     if todo
       due = if todo.due_date == Date.today
-          "(Due today"
+          "Due today"
         elsif todo.due_date < Date.today
-          "(Overdue"
+          "Overdue"
         else
-          "(Due later"
+          "Due later"
         end
-      completed = todo.completed ? "and completed)" : "and not completed)"
-      flash[:error] = "Todo already exists. Due date: #{todo.due_date.to_s(:short)} #{due} #{completed}"
+      is_completed = todo.completed ? "completed" : "not completed"
+      flash[:error] = "Todo with same due date already exists. (Status: #{due} and #{is_completed}) "
       redirect_to todos_path
-      # if todo doesnt already exist, create a new one(if todo_text and due_date are filled)
+      # if todo with same date doesnt already exist, create a new one(if todo_text and due_date are filled)
     else
       new_todo = Todo.new(
         todo_text: todo_text,
